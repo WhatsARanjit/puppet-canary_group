@@ -12,7 +12,4 @@ define canary::group (
   }
 }
 
-Canary::Group produces Canary_group {
-  test_node => $test_node,
-  test_env  => $test_env,
-}
+Canary::Group produces Canary_group {}

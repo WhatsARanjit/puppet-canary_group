@@ -1,10 +1,10 @@
-define canary::node {
+define canary::node (
+  String $test_node,
+  String $test_env,
+) {
   notify { "${test_node} being tested in ${test_env}":
     loglevel => debug,
   }
 }
 
-Canary::Node consumes Canary_group {
-  test_node => $test_node,
-  test_env  => $test_env,
-}
+Canary::Node consumes Canary_group {}
