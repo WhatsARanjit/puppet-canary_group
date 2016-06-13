@@ -3,13 +3,12 @@ application canary::on (
   String $test_env,
 ) {
 
-  case $::environment {
+  case $environment {
     'production': {
-      $group_export = Canary_group[$title]
       canary::group { $title:
         test_node => $test_node,
         test_env  => $test_env,
-        export    => $group_export,
+        export    => Canary_group[$title],
       }
       Canary::Group produces Canary_group {}
     }
