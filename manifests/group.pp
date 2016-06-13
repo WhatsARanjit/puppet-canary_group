@@ -13,7 +13,3 @@ define canary::group (
     rule                 => ['or', ['=', 'name', $test_node]]
   }
 }
-
-if $environment == 'production' {
-  Canary::Group produces Canary_group {}
-}
