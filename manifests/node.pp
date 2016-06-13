@@ -6,5 +6,3 @@ define canary::node (
     loglevel => debug,
   }
 }
-
-Canary::Node consumes Canary_group {}

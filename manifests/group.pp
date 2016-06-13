@@ -13,5 +13,3 @@ define canary::group (
     rule                 => ['or', ['=', 'name', $test_node]]
   }
 }
-
-Canary::Group produces Canary_group {}
