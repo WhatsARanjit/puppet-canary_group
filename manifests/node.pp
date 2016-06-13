@@ -4,7 +4,7 @@ define canary::node {
   }
 }
 
-Canary::Node consumes Canary {
+Canary::Node consumes Canary_group {
   test_node => $test_node,
   test_env  => $test_env,
 }
