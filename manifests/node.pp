@@ -6,3 +6,8 @@ define canary::node (
     loglevel => debug,
   }
 }
+
+if $environment != 'production' {
+  Canary::Node produces Canary_group {}
+}
+Canary::Node consumes Canary_group {}
