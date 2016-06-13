@@ -6,6 +6,11 @@ application canary::on (
   case $::environment {
     'production': {
       $group_export = Canary_group[$title]
+      canary::group { $title:
+        test_node => $test_node,
+        test_env  => $test_env,
+        export    => $group_export,
+      }
       Canary::Group produces Canary_group {}
     }
     default: {
@@ -14,12 +19,6 @@ application canary::on (
     }
   }
   Canary::Node consumes Canary_group {}
-
-  canary::group { $title:
-    test_node => $test_node,
-    test_env  => $test_env,
-    export    => $group_export,
-  }
 
   canary::node { $title:
     test_node => $test_node,
